@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GKE Store</title>
+  <style>
+    body{font-family:system-ui;margin:0;background:#f6f7fb;color:#172033}
+    header{padding:36px;max-width:1000px;margin:auto}
+    main{max-width:1000px;margin:auto;padding:0 36px 60px}
+    #products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+    article{background:white;border-radius:14px;padding:20px;box-shadow:0 5px 20px #00000012}
+    button{background:#1a73e8;color:white;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+    input{padding:9px;width:95%;margin:5px 0 12px}
+  </style>
+</head>
+<body>
+<header><h1>GKE Store</h1><p>A minimal ecommerce MVP running on Kubernetes.</p></header>
+<main><div id="products">Loading…</div></main>
+<script>
+async function load() {
+  const products = await (await fetch('/api/products')).json();
+  document.querySelector('#products').innerHTML = products.map(p => `
+    <article>
+      <h2>${p.name}</h2><p>${p.description}</p>
+      <strong>$${Number(p.price).toFixed(2)}</strong><p>${p.inventory} available</p>
+      <input id="email-${p.id}" type="email" placeholder="you@example.com">
+      <button onclick="buy(${p.id})">Buy one</button>
+    </article>`).join('');
+}
+async function buy(productId) {
+  const customer_email = document.querySelector(`#email-${productId}`).value;
+  const r = await fetch('/api/orders', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({customer_email, product_id:productId, quantity:1})
+  });
+  const data = await r.json();
+  alert(r.ok ? `Order ${data.id} created` : (data.detail || 'Order failed'));
+  if (r.ok) load();
+}
+load();
+</script>
+</body>
+</html>
