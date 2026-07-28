@@ -2,24 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Nimbus Commerce storefront" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <meta
+    name="description"
+    content="Nimbus Commerce storefront"
+  />
+
   <title>Nimbus — Modern Essentials</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body>
-  <div class="announcement">Free shipping on orders over $75 <span>·</span> 30-day returns</div>
+  <div class="announcement">
+    Free shipping on orders over $75
+    <span>·</span>
+    30-day returns
+  </div>
+
   <header class="nav shell">
-    <a class="brand" href="#">NIMBUS</a>
+    <a class="brand" href="/">NIMBUS</a>
+
     <nav aria-label="Primary navigation">
-      <a href="#new">New</a><a href="#shop">Shop</a><a href="#story">Our story</a>
+      <a href="#new">New</a>
+      <a href="#shop">Shop</a>
+      <a href="#story">Our story</a>
     </nav>
+
     <div class="nav-actions">
-      <button class="icon-button" aria-label="Search">⌕</button>
-      <button class="cart-button" id="cartButton" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+      <a
+        class="account-link"
+        id="accountLink"
+        href="/auth.html"
+      >
+        Log in
+      </a>
+
+      <button
+        class="icon-button"
+        type="button"
+        aria-label="Search"
+      >
+        ⌕
+      </button>
+
+      <button
+        class="cart-button"
+        id="cartButton"
+        type="button"
+        aria-label="Open cart"
+      >
+        Bag
+        <span id="cartCount">0</span>
+      </button>
     </div>
   </header>
 
@@ -27,47 +79,184 @@
     <section class="hero shell" id="new">
       <div class="hero-copy">
         <p class="eyebrow">THE EVERYDAY EDIT</p>
-        <h1>Objects designed<br>for slower living.</h1>
-        <p class="hero-text">Thoughtful essentials made with honest materials, quiet colors, and lasting utility.</p>
-        <a class="primary" href="#shop">Shop the collection <span>→</span></a>
+
+        <h1>
+          Objects designed<br />
+          for slower living.
+        </h1>
+
+        <p class="hero-text">
+          Thoughtful essentials made with honest materials,
+          quiet colors, and lasting utility.
+        </p>
+
+        <a class="primary" href="#shop">
+          Shop the collection
+          <span>→</span>
+        </a>
       </div>
-      <div class="hero-visual" role="img" aria-label="Minimal ceramic vase and folded textile">
-        <div class="sun"></div><div class="vase"></div><div class="stem stem-one"></div><div class="stem stem-two"></div><div class="textile"></div>
+
+      <div
+        class="hero-visual"
+        role="img"
+        aria-label="Minimal ceramic vase and folded textile"
+      >
+        <div class="sun"></div>
+        <div class="vase"></div>
+        <div class="stem stem-one"></div>
+        <div class="stem stem-two"></div>
+        <div class="textile"></div>
       </div>
     </section>
 
-    <section class="benefits shell" aria-label="Store benefits">
-      <div><strong>Considered design</strong><span>Made for everyday use</span></div>
-      <div><strong>Responsible materials</strong><span>Chosen with care</span></div>
-      <div><strong>Small-batch production</strong><span>Less waste, better quality</span></div>
+    <section
+      class="benefits shell"
+      aria-label="Store benefits"
+    >
+      <div>
+        <strong>Considered design</strong>
+        <span>Made for everyday use</span>
+      </div>
+
+      <div>
+        <strong>Responsible materials</strong>
+        <span>Chosen with care</span>
+      </div>
+
+      <div>
+        <strong>Small-batch production</strong>
+        <span>Less waste, better quality</span>
+      </div>
     </section>
 
     <section class="products shell" id="shop">
       <div class="section-heading">
-        <div><p class="eyebrow">SHOP FAVORITES</p><h2>Made to keep.</h2></div>
-        <button class="text-button" id="viewAll">View all products →</button>
+        <div>
+          <p class="eyebrow">SHOP FAVORITES</p>
+          <h2>Made to keep.</h2>
+        </div>
+
+        <button
+          class="text-button"
+          id="viewAll"
+          type="button"
+        >
+          View all products →
+        </button>
       </div>
-      <div class="product-grid" id="productGrid"></div>
+
+      <div
+        class="product-grid"
+        id="productGrid"
+        aria-live="polite"
+      ></div>
     </section>
 
     <section class="story shell" id="story">
-      <div class="story-art"><div class="arch"></div><div class="bowl"></div></div>
-      <div class="story-copy"><p class="eyebrow">OUR APPROACH</p><h2>Fewer, better things.</h2><p>We partner with independent makers to create useful pieces that feel at home for years—not seasons.</p><a href="#shop" class="text-link">Read our story →</a></div>
+      <div class="story-art">
+        <div class="arch"></div>
+        <div class="bowl"></div>
+      </div>
+
+      <div class="story-copy">
+        <p class="eyebrow">OUR APPROACH</p>
+
+        <h2>Fewer, better things.</h2>
+
+        <p>
+          We partner with independent makers to create useful
+          pieces that feel at home for years—not seasons.
+        </p>
+
+        <a href="#shop" class="text-link">
+          Read our story →
+        </a>
+      </div>
     </section>
 
     <section class="newsletter shell">
-      <div><p class="eyebrow">STAY IN THE LOOP</p><h2>Notes from Nimbus</h2><p>New releases, studio stories, and occasional offers.</p></div>
-      <form id="newsletterForm"><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Email address" required><button type="submit">Subscribe</button></form>
+      <div>
+        <p class="eyebrow">STAY IN THE LOOP</p>
+        <h2>Notes from Nimbus</h2>
+        <p>
+          New releases, studio stories, and occasional offers.
+        </p>
+      </div>
+
+      <form id="newsletterForm">
+        <label class="sr-only" for="email">
+          Email address
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Email address"
+          autocomplete="email"
+          required
+        />
+
+        <button type="submit">
+          Subscribe
+        </button>
+      </form>
     </section>
   </main>
 
-  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="cart-header"><h2>Your bag</h2><button id="closeCart" aria-label="Close cart">×</button></div>
-    <div id="cartItems" class="cart-items"><p class="empty">Your bag is empty.</p></div>
-    <div class="cart-footer"><div><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><button>Checkout</button></div>
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+    aria-label="Shopping cart"
+  >
+    <div class="cart-header">
+      <h2>Your bag</h2>
+
+      <button
+        id="closeCart"
+        type="button"
+        aria-label="Close cart"
+      >
+        ×
+      </button>
+    </div>
+
+    <div
+      id="cartItems"
+      class="cart-items"
+      aria-live="polite"
+    >
+      <p class="empty">Your bag is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div>
+        <span>Subtotal</span>
+        <strong id="subtotal">$0.00</strong>
+      </div>
+
+      <button
+        id="checkoutButton"
+        type="button"
+      >
+        Checkout
+      </button>
+    </div>
   </aside>
-  <div class="overlay" id="overlay"></div>
-  <div class="toast" id="toast" role="status"></div>
+
+  <div
+    class="overlay"
+    id="overlay"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
   <script src="/app.js"></script>
 </body>
 </html>
