@@ -1,23 +1,54 @@
 const API_BASE_URL = "http://136.111.161.172";
 
 const productLooks = {
-  1: {
-    type: "mug",
-    background: "#dcd4c5",
+  mug: {
+    image: "/images/product-mug.svg",
+    background: "#e2dac8",
   },
-  2: {
-    type: "lamp",
-    background: "#d2d2c3",
+  lamp: {
+    image: "/images/product-lamp.svg",
+    background: "#d8d9c7",
   },
-  3: {
-    type: "bottle",
-    background: "#c3c9bd",
+  carafe: {
+    image: "/images/product-carafe.svg",
+    background: "#d2d8c9",
   },
-  4: {
-    type: "tote",
-    background: "#dfd0bc",
+  tote: {
+    image: "/images/product-tote.svg",
+    background: "#e3d2b9",
   },
 };
+
+const defaultLookOrder = ["mug", "lamp", "carafe", "tote"];
+
+function getLook(product) {
+  const name = `${product.name} ${product.category}`.toLowerCase();
+
+  if (name.includes("mug") || name.includes("cup")) {
+    return productLooks.mug;
+  }
+
+  if (name.includes("lamp") || name.includes("light")) {
+    return productLooks.lamp;
+  }
+
+  if (
+    name.includes("carafe") ||
+    name.includes("bottle") ||
+    name.includes("kitchen")
+  ) {
+    return productLooks.carafe;
+  }
+
+  if (name.includes("tote") || name.includes("bag")) {
+    return productLooks.tote;
+  }
+
+  const key =
+    defaultLookOrder[(product.id - 1) % defaultLookOrder.length];
+
+  return productLooks[key];
+}
 
 let products = [];
 
@@ -149,7 +180,7 @@ async function loadProducts() {
 function renderProducts() {
   productGrid.innerHTML = products
     .map((product) => {
-      const look = productLooks[product.id] || productLooks[1];
+      const look = getLook(product);
 
       return `
         <article class="product-card">
@@ -157,7 +188,11 @@ function renderProducts() {
             class="product-image"
             style="background:${look.background}"
           >
-            <div class="shape ${look.type}"></div>
+            <img
+              src="${look.image}"
+              alt="${product.name}"
+              loading="lazy"
+            />
           </div>
 
           <div class="product-meta">
@@ -294,10 +329,18 @@ function renderCart() {
 
   cartItems.innerHTML = cart.items
     .map(
-      (item) => `
+      (item) => {
+        const look = getLook({
+          id: item.product_id,
+          name: item.name || "",
+          category: item.category || "",
+        });
+
+        return `
         <div class="cart-item">
           <div class="cart-swatch">
-            ${item.quantity}×
+            <img src="${look.image}" alt="" />
+            <span>${item.quantity}</span>
           </div>
 
           <div>
@@ -343,7 +386,8 @@ function renderCart() {
             ${money(item.line_total)}
           </strong>
         </div>
-      `
+      `;
+      }
     )
     .join("");
 
@@ -408,12 +452,23 @@ checkoutButton.addEventListener("click", () => {
 });
 
 
-newsletterForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  showToast("You’re on the list. Welcome!");
-  newsletterForm.reset();
-});
+    showToast("You’re on the list. Welcome!");
+    newsletterForm.reset();
+  });
+}
+
+
+const viewAllButton = document.querySelector("#viewAll");
+
+if (viewAllButton) {
+  viewAllButton.addEventListener("click", () => {
+    window.location.href = "/shop.html";
+  });
+}
 
 
 async function initializeStorefront() {

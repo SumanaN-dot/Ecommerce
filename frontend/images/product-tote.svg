@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ead9c2"/>
+      <stop offset="1" stop-color="#dcc6a9"/>
+    </linearGradient>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f2e9d6"/>
+      <stop offset=".55" stop-color="#e7dbc2"/>
+      <stop offset="1" stop-color="#d2c2a2"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="560" cy="230" r="170" fill="#f6ecd9" opacity=".6" filter="url(#soft)"/>
+  <rect y="730" width="800" height="270" fill="#cbb391"/>
+  <rect y="730" width="800" height="10" fill="#b39a77"/>
+  <ellipse cx="400" cy="762" rx="230" ry="30" fill="#8f7a5b" opacity=".45" filter="url(#soft)"/>
+
+  <!-- handles -->
+  <path d="M300 470 q0 -160 100 -160 q100 0 100 160" fill="none" stroke="#b59d78" stroke-width="26" stroke-linecap="round"/>
+  <path d="M300 470 q0 -160 100 -160 q100 0 100 160" fill="none" stroke="#d9c5a2" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- bag body -->
+  <path d="M230 452 h340 q14 0 16 16 l22 240 q3 44 -42 44 h-332 q-45 0 -42 -44 l22 -240 q2 -16 16 -16 z" fill="url(#canvas)"/>
+  <!-- gusset creases -->
+  <path d="M262 470 l-16 250 M538 470 l16 250" stroke="#c6b593" stroke-width="6" opacity=".7"/>
+  <path d="M330 480 l-6 250 M470 480 l6 250" stroke="#d6c7a6" stroke-width="4" opacity=".8"/>
+  <!-- stitched top hem -->
+  <rect x="222" y="452" width="356" height="26" rx="10" fill="#dccbaa"/>
+  <line x1="238" y1="465" x2="562" y2="465" stroke="#a8916c" stroke-width="3" stroke-dasharray="10 8"/>
+  <!-- leaf mark -->
+  <g transform="translate(400 610)">
+    <path d="M0 -46 q34 24 0 92 q-34 -68 0 -92 z" fill="#5e6b4c"/>
+    <line x1="0" y1="-30" x2="0" y2="58" stroke="#eee3cb" stroke-width="4"/>
+  </g>
+  <!-- handle attachment stitches -->
+  <rect x="288" y="452" width="24" height="42" rx="6" fill="#b59d78"/>
+  <rect x="488" y="452" width="24" height="42" rx="6" fill="#b59d78"/>
+</svg>

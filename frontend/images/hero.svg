@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eae3d0"/>
+      <stop offset="1" stop-color="#d7d2bd"/>
+    </linearGradient>
+    <linearGradient id="vase" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b684e"/>
+      <stop offset=".55" stop-color="#47543c"/>
+      <stop offset="1" stop-color="#37422d"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dcc19b"/>
+      <stop offset="1" stop-color="#c3a479"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1100" fill="url(#wall)"/>
+
+  <!-- sun through window -->
+  <circle cx="640" cy="300" r="130" fill="#e8b96e" opacity=".9"/>
+  <circle cx="640" cy="300" r="190" fill="#f0d9a4" opacity=".35" filter="url(#soft)"/>
+
+  <!-- window light band -->
+  <path d="M520 0 L900 0 L900 620 Z" fill="#f4eeda" opacity=".35"/>
+
+  <!-- shelf -->
+  <rect y="820" width="900" height="280" fill="#c9bda1"/>
+  <rect y="820" width="900" height="12" fill="#b2a688"/>
+
+  <!-- shadows -->
+  <ellipse cx="430" cy="866" rx="240" ry="36" fill="#84785d" opacity=".5" filter="url(#soft)"/>
+  <ellipse cx="720" cy="880" rx="130" ry="26" fill="#84785d" opacity=".4" filter="url(#soft)"/>
+
+  <!-- draped textile -->
+  <path d="M40 1100 L40 900 q0 -40 40 -40 l180 0 q40 0 38 40 l-10 200 z" fill="url(#cloth)"/>
+  <path d="M90 872 q-4 120 4 228 M150 866 q-6 122 2 234 M210 866 q-2 120 2 234" stroke="#b1946c" stroke-width="8" fill="none" opacity=".6"/>
+
+  <!-- tall vase with branches -->
+  <path d="M350 560 q-60 60 -60 170 q0 130 140 130 q140 0 140 -130 q0 -110 -60 -170 l0 -60 h-160 z" fill="url(#vase)"/>
+  <ellipse cx="430" cy="500" rx="80" ry="16" fill="#2c3623"/>
+  <path d="M340 600 q-24 60 -16 150" stroke="#77855f" stroke-width="14" fill="none" opacity=".6" stroke-linecap="round"/>
+
+  <!-- branches -->
+  <g stroke="#55604a" stroke-width="9" fill="none" stroke-linecap="round">
+    <path d="M420 500 q-30 -160 -110 -230"/>
+    <path d="M440 500 q10 -180 90 -260"/>
+    <path d="M430 500 q0 -120 10 -190"/>
+  </g>
+  <g fill="#6f7d59">
+    <ellipse cx="312" cy="282" rx="13" ry="30" transform="rotate(-40 312 282)"/>
+    <ellipse cx="352" cy="330" rx="13" ry="30" transform="rotate(-30 352 330)"/>
+    <ellipse cx="512" cy="262" rx="13" ry="30" transform="rotate(35 512 262)"/>
+    <ellipse cx="486" cy="330" rx="13" ry="30" transform="rotate(25 486 330)"/>
+    <ellipse cx="442" cy="290" rx="12" ry="26" transform="rotate(8 442 290)"/>
+  </g>
+  <circle cx="298" cy="252" r="14" fill="#3f4b32"/>
+  <circle cx="534" cy="228" r="14" fill="#3f4b32"/>
+
+  <!-- small bowl on right -->
+  <path d="M640 830 h160 q-6 56 -80 56 q-74 0 -80 -56 z" fill="url(#vase)"/>
+  <ellipse cx="720" cy="830" rx="80" ry="14" fill="#5d6a4e"/>
+</svg>

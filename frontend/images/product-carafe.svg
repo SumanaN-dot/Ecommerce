@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dde1d4"/>
+      <stop offset="1" stop-color="#c6cdbc"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8fa06f"/>
+      <stop offset=".5" stop-color="#75885a"/>
+      <stop offset="1" stop-color="#5d7047"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9b784"/>
+      <stop offset="1" stop-color="#7e9060"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="250" cy="260" r="170" fill="#ecefdd" opacity=".55" filter="url(#soft)"/>
+  <rect y="710" width="800" height="290" fill="#b6bda9"/>
+  <rect y="710" width="800" height="10" fill="#a0a892"/>
+  <ellipse cx="420" cy="746" rx="190" ry="30" fill="#767e66" opacity=".45" filter="url(#soft)"/>
+
+  <!-- small glass beside carafe -->
+  <g>
+    <path d="M235 590 h96 l-10 130 q-1 16 -18 16 h-40 q-17 0 -18 -16 z" fill="url(#glass)" opacity=".85"/>
+    <path d="M243 640 h80 l-6 80 q-1 10 -12 10 h-44 q-11 0 -12 -10 z" fill="url(#liquid)" opacity=".9"/>
+    <path d="M245 596 l-8 118" stroke="#dfe6c8" stroke-width="7" opacity=".7" stroke-linecap="round"/>
+  </g>
+
+  <!-- carafe -->
+  <g>
+    <!-- body -->
+    <path d="M380 430 q-72 60 -72 170 q0 140 122 140 q122 0 122 -140 q0 -110 -72 -170 l0 -70 h-100 z" fill="url(#glass)"/>
+    <!-- liquid -->
+    <path d="M321 620 q6 106 109 106 q103 0 109 -106 q-109 34 -218 0 z" fill="url(#liquid)"/>
+    <!-- neck ridge -->
+    <rect x="374" y="352" width="112" height="16" rx="8" fill="#556743"/>
+    <!-- cork -->
+    <rect x="392" y="300" width="76" height="58" rx="12" fill="#cfae82"/>
+    <rect x="392" y="300" width="76" height="14" rx="7" fill="#e0c39a"/>
+    <!-- highlight -->
+    <path d="M360 470 q-28 60 -18 150" stroke="#e5ecd0" stroke-width="16" fill="none" opacity=".6" stroke-linecap="round"/>
+    <circle cx="500" cy="520" r="10" fill="#e5ecd0" opacity=".5"/>
+  </g>
+
+  <!-- olive sprig -->
+  <g stroke="#5c6b48" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M560 700 q60 -70 120 -96"/>
+  </g>
+  <g fill="#77875c">
+    <ellipse cx="612" cy="652" rx="10" ry="22" transform="rotate(40 612 652)"/>
+    <ellipse cx="652" cy="628" rx="10" ry="22" transform="rotate(55 652 628)"/>
+    <ellipse cx="596" cy="688" rx="10" ry="20" transform="rotate(25 596 688)"/>
+  </g>
+  <circle cx="676" cy="612" r="12" fill="#43522f"/>
+</svg>

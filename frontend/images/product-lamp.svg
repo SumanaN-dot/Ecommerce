@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2e2d2"/>
+      <stop offset="1" stop-color="#cfd0bd"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5c6a50"/>
+      <stop offset=".5" stop-color="#47543e"/>
+      <stop offset="1" stop-color="#39442f"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#cbb08a"/>
+      <stop offset="1" stop-color="#a98d67"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- lamp glow -->
+  <circle cx="400" cy="420" r="230" fill="#f4e9c8" opacity=".55" filter="url(#soft)"/>
+  <!-- table -->
+  <rect y="720" width="800" height="280" fill="#bfc0aa"/>
+  <rect y="720" width="800" height="10" fill="#a9aa93"/>
+  <ellipse cx="400" cy="756" rx="210" ry="30" fill="#7b7c67" opacity=".45" filter="url(#soft)"/>
+
+  <!-- warm light under shade -->
+  <path d="M300 440 L500 440 L560 720 L240 720 Z" fill="#f0e2b8" opacity=".38"/>
+
+  <!-- stem -->
+  <rect x="386" y="430" width="28" height="270" rx="12" fill="url(#wood)"/>
+  <rect x="386" y="430" width="10" height="270" rx="5" fill="#e0c9a4" opacity=".6"/>
+  <!-- base -->
+  <ellipse cx="400" cy="712" rx="120" ry="26" fill="url(#wood)"/>
+  <ellipse cx="400" cy="705" rx="112" ry="20" fill="#d6bb93"/>
+
+  <!-- shade -->
+  <path d="M285 250 q115 -34 230 0 l45 190 q-160 40 -320 0 z" fill="url(#shade)"/>
+  <path d="M290 254 q112 -32 220 0" stroke="#7c8a6d" stroke-width="10" fill="none" opacity=".7"/>
+  <path d="M241 438 q159 40 318 0 l1 12 q-160 40 -320 0 z" fill="#2b3424"/>
+  <!-- shade highlight -->
+  <path d="M320 270 l-38 160" stroke="#8b9a7a" stroke-width="14" opacity=".5" stroke-linecap="round"/>
+  <!-- pull cord -->
+  <line x1="470" y1="452" x2="470" y2="512" stroke="#3a4430" stroke-width="4"/>
+  <circle cx="470" cy="520" r="8" fill="#3a4430"/>
+</svg>

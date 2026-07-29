@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9e1cf"/>
+      <stop offset="1" stop-color="#d9cfb8"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f3ece0"/>
+      <stop offset=".55" stop-color="#e6dccb"/>
+      <stop offset="1" stop-color="#cfc2ab"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9ab92"/>
+      <stop offset="1" stop-color="#8f826b"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- back wall light -->
+  <circle cx="560" cy="250" r="180" fill="#f2ead7" opacity=".6" filter="url(#soft)"/>
+  <!-- table -->
+  <rect y="700" width="800" height="300" fill="#c9bda3"/>
+  <rect y="700" width="800" height="10" fill="#b3a88e"/>
+
+  <!-- shadow -->
+  <ellipse cx="410" cy="742" rx="215" ry="34" fill="#8d8168" opacity=".45" filter="url(#soft)"/>
+
+  <!-- handle -->
+  <path d="M545 460 q120 10 120 120 q0 110 -118 118 l-4 -54 q66 -8 66 -64 q0 -60 -68 -66 z" fill="#d8ccb6"/>
+  <path d="M545 466 q112 12 112 114" fill="none" stroke="#f0e9db" stroke-width="10" opacity=".5"/>
+
+  <!-- mug body -->
+  <path d="M255 400 h300 q10 0 10 12 v250 q0 78 -80 78 h-160 q-80 0 -80 -78 v-250 q0 -12 10 -12 z" fill="url(#body)"/>
+  <!-- rim -->
+  <ellipse cx="405" cy="404" rx="160" ry="26" fill="#f6f1e6"/>
+  <ellipse cx="405" cy="406" rx="146" ry="20" fill="url(#inner)"/>
+  <!-- glaze line -->
+  <path d="M247 620 q158 30 316 0 l0 30 q-158 30 -316 0 z" fill="#b8ab90" opacity=".55"/>
+  <!-- speckles -->
+  <g fill="#9a8d73" opacity=".5">
+    <circle cx="300" cy="480" r="3"/><circle cx="350" cy="540" r="2.5"/><circle cx="430" cy="470" r="3"/>
+    <circle cx="480" cy="560" r="2.5"/><circle cx="330" cy="640" r="3"/><circle cx="470" cy="660" r="2.5"/>
+    <circle cx="395" cy="590" r="2"/><circle cx="280" cy="590" r="2"/><circle cx="520" cy="500" r="2.5"/>
+  </g>
+  <!-- highlight -->
+  <path d="M285 430 q-14 130 6 250" stroke="#fbf7ee" stroke-width="16" fill="none" opacity=".55" stroke-linecap="round"/>
+</svg>
