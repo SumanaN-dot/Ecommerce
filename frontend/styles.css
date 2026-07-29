@@ -396,6 +396,7 @@ a {
   display: grid;
   place-items: center;
   border-radius: 200px 200px 0 0;
+  overflow: hidden;
 }
 
 .product-image img {
@@ -411,6 +412,9 @@ a {
 }
 
 .product-meta {
+  position: relative;
+  z-index: 1;
+  background: var(--card);
   padding: 20px 22px 24px;
   display: grid;
   grid-template-columns: 1fr auto;
